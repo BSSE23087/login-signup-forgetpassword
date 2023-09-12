@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Login Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/css/style.css'%}">
+  </head>
+	<body class="img js-fullheight" style="background-image: url({% static 'images/code.jpg'%});">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Login Here</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<h3 class="mb-4 text-center">Welcome Back!</h3>
+		      	<form  method="post" class="signin-form">
+					{% csrf_token %}
+				<div class="form-group">
+					<input
+                    required
+                  type="text"
+                  name="username"
+                  placeholder="Username Or Email"
+                  class="form-control"
+                  autocomplete="off"
+                >
+					</div>
+                    <div class="form-group">
+                        <input
+                        required
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      class="form-control"
+                      autocomplete="off"
+                      id="password"
+                    >
+                          <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                        </div>
+	            <div class="form-group">
+					
+                    {% for n in messages %}
+                    <p> 
+                    {{n}}!
+                    </p>
+                  {% endfor %}
+	            	<button type="submit" class="form-control btn btn-primary submit px-3">Login</button>
+	            </div>
+	            </div>
+	          </form>
+              <div class=" justify-content-center links">
+                
+                Don't have an account? <a href="/signup/" class="ml-2" styyle="margin-bottom:20px;">Sign Up</a>
+                <br>
+                Forget password<a href="/forgetpassword/" class="ml-2" styyle="margin-bottom:20px;">Reset password</a>
+              </div>
+
+			<div>
+				
+			</div>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<script src="{% static 'js/jquery.min.js'%}"></script>
+  <script src="{% static 'js/popper.js'%}"></script>
+  <script src="{% static 'js/bootstrap.min.js'%}"></script>
+  <script src="{% static 'js/main.js'%}"></script>
+
+	</body>
+</html>
+

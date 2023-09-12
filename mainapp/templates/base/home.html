@@ -1,0 +1,8 @@
+
+{% if user.is_authenticated %}
+Hello {{user.username}}
+{% else %}
+<button><a  href="/login/">Login</a></button>
+<button><a  href="/signup/">signup</a></button>
+<button><a  href="/forgetpassword/">Reset password</a></button>
+{% endif %}
