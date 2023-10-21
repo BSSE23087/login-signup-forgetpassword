@@ -8,6 +8,8 @@ urlpatterns = [
     path('signup/',views.signuppage,name='signup'),
     path('forgetpassword/',views.forgetpassword,name='forgetpassword'),
     path('resetpassword/<token>/',views.resetpassord,name='resetpassord'),
+    path('scrape_data/',views.scrapedata,name='scrape'),
+
 
  ]
 

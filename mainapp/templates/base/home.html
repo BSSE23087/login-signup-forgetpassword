@@ -1,6 +1,12 @@
 
 {% if user.is_authenticated %}
 Hello {{user.username}}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Scrape Tweets</button>
+</form>
+
 {% else %}
 <button><a  href="/login/">Login</a></button>
 <button><a  href="/signup/">signup</a></button>

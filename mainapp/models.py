@@ -9,3 +9,13 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+from django.db import models
+
+class Tweetsdata(models.Model):
+    user_tags = models.CharField(max_length=255)
+    timestamp = models.DateTimeField()
+    tweet = models.TextField()
+    reply = models.TextField()
+    retweets =  models.CharField(max_length=255)
+    likes =  models.CharField(max_length=255)
